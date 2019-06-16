@@ -1,0 +1,36 @@
+# MNIST Topology Optimization
+
+## Dataset: MNIST
+Handwritten digits from 0 to 9
+
+## Model: LeNet
+Implemented in Tensorflow, tested with TF 1.12 
+
+## Hyperparameters:
+dropout - Dropout rate used for generalization
+momentum - Momentum factor
+c1\_sz - Filter size of the first convolutional layer
+c1\_ft - Filter count of the first convolutional layer
+c2\_sz - Filter size of the second convolutional layer
+c2\_ft - Filter count of the second convolutional layer
+fullyc\_sz - Width of the fully connected layer
+
+## Use
+### Requirements: (On Cori)
+- Python 3 (module load python3)
+- Tensorflow 1.12 (module load
+- crayai (module use ; module load crayai)
+
+module load python3
+module load tensorflow/intel-1.12.0-py36
+module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
+module load crayai
+
+To run:
+
+$ python genetic.py  --generations 5 --num_demes 1 --pop_size 4
+
+If you want more deatiled output, run with --verbose
+
+### Debugging:
+Set the verbose flag on evaluator in genetic.py to True. This will dump all output from run_training calls so you can detect whats going wrong. 

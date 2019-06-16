@@ -1,0 +1,24 @@
+Hands-On Exercises for exploring Cray HPO on Cori
+
+Copy the /global/cscratch1/sd/mikeri/ISC19/crayai_hpo/examples directory
+to your own working directory.
+
+Set up python environment:
+
+The easiest way to do this is to use the existing base conda environment and tensorflow installed on Cori
+
+This environment works for running the HPO examples: 
+ 
+module load python3  -- note on Cori this loads anaconda, and numpy and scikit-learn are already installed in base
+module load tensorflow/intel-1.12.0-py36
+module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
+module load crayai/0.3.0000.201904251234_0002
+
+Example 0: sine function optimization
+Simple example which minimizes both error and time taken when 
+fitting a polynomial to sin function
+
+Example 1: HPO with Topology (Tensorflow)
+Traditional approach using simultaneous optimization of hyperparameters 
+controlling NN topology and training hyperparameters
+

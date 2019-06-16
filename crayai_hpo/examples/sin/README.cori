@@ -1,0 +1,11 @@
+Simple example which minimizes both error and time taken when 
+fitting a polynomial to sin function
+
+This run very quickly and can be run on the login node
+
+module load python3
+module load tensorflow/intel-1.12.0-py36
+module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
+module load crayai/0.3.0000.201904251234_0002
+
+python genetic.py
