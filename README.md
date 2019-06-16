@@ -115,6 +115,20 @@ from the CIFAR10 dataset.
    to solve the CIFAR10 classification task. For every epoch you should see the
    loss and accuracy reported for both the training set and the validation set.
    Take note of the best validation accuracy achieved.
+   
+### Hyper-parameter optimization example
+
+Mike has a directory with the code for you to run. Follow these instructions to setup the examples
+on a Cori batch node on the scratch file system.
+
+```
+    salloc -C KNL --reservation isc19_dl_tutorial -q regular -t 30
+    cd $SCRATCH
+    cp -R /global/cscratch1/sd/mikeri/ISC19/crayai_hpo/ .
+    module load tensorflow
+    module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
+    module load crayai/0.3.0000.201904251234_0002
+```
 
 ### Multi-node training example
 
