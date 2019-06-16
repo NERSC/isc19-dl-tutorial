@@ -122,12 +122,18 @@ Mike has a directory with the code for you to run. Follow these instructions to 
 on a Cori batch node on the scratch file system.
 
 ```
-    salloc -C KNL --reservation isc19_dl_tutorial -q regular -t 30
-    cd $SCRATCH
-    cp -R /global/cscratch1/sd/mikeri/ISC19/crayai_hpo/ .
-    module load tensorflow
-    module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
-    module load crayai/0.3.0000.201904251234_0002
+salloc -C KNL --reservation isc19_dl_tutorial -q regular -t 30
+cd $SCRATCH
+cp -R /global/cscratch1/sd/mikeri/ISC19/crayai_hpo/ .
+module load tensorflow
+module use /global/cscratch1/sd/mikeri/ISC19/Urika-XC1.2/opt/cray/modulefiles
+module load crayai/0.3.0000.201904251234_0002
+```
+
+Then you can `cd` to the relevant example directory and run the scripts, e.g.:
+```
+cd crayai_hpo/examples/sin
+python genetic.py
 ```
 
 ### Multi-node training example
